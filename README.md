@@ -1,4 +1,4 @@
-# **Apostas de Corrida API**
+# **PIT STOP 🏎️**
 
 ## **Descrição**
 
@@ -27,3 +27,112 @@ O saldo do usuário é atualizado com base nos resultados das apostas, e o siste
 Aposta na posição final de um piloto.
 
 **Exemplo de corpo da requisição:**
+```json
+{
+  "piloto": "Jake",
+  "posicao": 1,
+  "moedas": 10
+}
+```
+**Response:**
+```json
+{
+  "mensagem": "Aposta registrada!",
+  "saldo": 110
+}
+```
+
+### **POST /apostar/podio**
+Aposta no pódio (primeiro, segundo e terceiro colocados).
+
+**Exemplo de corpo da requisição:**
+```json
+{
+  "pilotos": ["Jake", "Stoffel", "Sergio"],
+  "moedas": 50
+}
+```
+**Response:**
+```json
+{
+  "podio": ["Jake", "Stoffel", "Sergio"],
+  "acertos": 3,
+  "saldo": 350
+}
+```
+
+### **POST /apostar/pitstop**
+Aposta no piloto que fará o pitstop mais rápido.
+
+**Exemplo de corpo da requisição:**
+```json
+{
+  "piloto": "Jake",
+  "moedas": 10
+}
+```
+**Response:**
+```json
+{
+  "vencedor": "Jake",
+  "saldo": 120
+}
+```
+### **POST /apostar/volta-rapida**
+Aposta no piloto que fará a volta mais rápida.
+
+**Exemplo de corpo da requisição:**
+
+```json
+{
+  "piloto": "Jake",
+  "moedas": 20
+}
+```
+**Response:**
+```json
+{
+  "vencedor": "Jake",
+  "saldo": 130
+}
+```
+
+## **Instalação e Execução**
+
+### **Requisitos**
+
+- Python 3.8+
+- Flask
+
+### **Passo a Passo para Instalação**
+
+1. **Clone o repositório**
+
+   Faça o clone do repositório para sua máquina local:
+
+   ```bash
+   git clone https://github.com/seuusuario/seuprojeto.git
+   ```
+2. **Navegue até o diretório do projeto**
+
+   Entre no diretório do projeto clonado:
+
+   ```bash
+   cd seuprojeto
+   ```
+3. **Instale as dependências**
+  Instale as dependências necessárias:
+
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+
+
+
+
+   
+
+
+
+
